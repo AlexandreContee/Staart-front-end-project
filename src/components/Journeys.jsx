@@ -15,8 +15,9 @@ const Journeys = () => {
 
   return (
     <div>
-      <h1>Journeys</h1>
-      {isLoading ? (<div className="loader"></div>)
+      <h1>Jornadas</h1>
+      {isLoading ?
+        (<div className="loader"></div>)
         : (journeys.map(journey => (
           <JourneyItem
             key={journey.pathID}

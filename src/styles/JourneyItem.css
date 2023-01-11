@@ -1,9 +1,25 @@
 .journey {
+  width: 80%;
   background-color: #3232b3;
   color: #dddddd;
   padding: 1rem;
-  margin: 2rem 0;
+  margin: 3rem auto;
+  padding: 2rem;
   border-radius: 10px;
+  transition: background .4s ease-in-out, scale .4s ease-in-out;
+}
+
+.journey:hover {
+  background-color: #0707aa;
+  scale: 1.02;
+}
+
+.journey img[alt="thumb"] {
+  transition: scale .4s linear;
+}
+
+.journey:hover img[alt="thumb"] {
+  scale: 1.4;
 }
 
 .journey div {

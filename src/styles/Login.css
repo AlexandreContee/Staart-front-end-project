@@ -1,0 +1,10 @@
+.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.light-blue {
+  color: #6B61F5;
+}

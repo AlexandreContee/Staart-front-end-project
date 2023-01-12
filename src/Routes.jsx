@@ -4,6 +4,7 @@ import Signup from "./pages/Signup"
 import { PrivateRoute } from "./components/PrivateRoute"
 import Login from "./pages/Login"
 import ForgotPassword from "./pages/ForgotPassword"
+import JourneySelection from "./components/JourneySelection"
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,9 @@ const AppRoutes = () => {
       }
       />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/journeys/:pathID" element={<JourneySelection />} action={({req}) => {
+        
+      }} />
       <Route path="*" element={
         <div>
           <h1>Ops! Rota não encontrada!</h1>

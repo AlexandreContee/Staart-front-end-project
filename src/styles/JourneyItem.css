@@ -10,7 +10,7 @@
 }
 
 .journey:hover {
-  background-color: #0707aa;
+  background-color: #1b1baa;
   scale: 1.02;
 }
 
@@ -28,12 +28,17 @@
 }
 
 .journey div h2 {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
-.journey img {
+.journey img[alt="thumb"] {
   width: 50px;
   height: 50px;
+}
+
+.banner {
+  width: 100%;
+  margin: 2rem auto;
 }
 
 .tag {

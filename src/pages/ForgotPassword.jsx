@@ -1,8 +1,15 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import Header from "../components/Header"
 import { useAuth } from "../context"
-import "../styles/ForgotPassword.css"
+import Logo from "../components/Logo"
+import Title from "../components/Title"
+import { 
+  Button, 
+  ForgotPasswordContainer, 
+  ForgotPasswordFormContainer, 
+  HeaderTitle, 
+  InputField 
+} from "../styles/StyledComponents"
 
 const ForgotPassword = () => {
 
@@ -27,31 +34,34 @@ const ForgotPassword = () => {
   }
 
   return (
-    <div className='forgot'>
-      <Header />
-      <div className="form">
-        <form onSubmit={handleFormSubmit}>
+    <>
+      <Logo />
+      <ForgotPasswordContainer>
+        <Title />
+        <ForgotPasswordFormContainer>
+          <form onSubmit={handleFormSubmit}>
+            <div>
+              <HeaderTitle>Esqueci minha senha</HeaderTitle>
+            </div>
+            <div>
+              <label>
+                E-mail
+                <InputField
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="exemplo@email.com"
+                />
+              </label>
+            </div>
+            <Button disabled={isLoading} type="submit">Enviar email</Button>
+          </form>
           <div>
-            <h2>Esqueci minha senha</h2>
+            <p><Link to='/signup'>Não possui uma conta? Cadastre-se</Link></p>
           </div>
-          <div>
-            <label>
-              E-mail
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="exemplo@email.com"
-              />
-            </label>
-          </div>
-          <button disabled={isLoading} type="submit">Enviar email</button>
-        </form>
-        <div>
-          <p><Link to='/signup'>Não possui uma conta? Cadastre-se</Link></p>
-        </div>
-      </div>
-    </div>
+        </ForgotPasswordFormContainer>
+      </ForgotPasswordContainer>
+    </>
   )
 }
 

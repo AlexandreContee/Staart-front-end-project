@@ -1,8 +1,16 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import Header from "../components/Header"
 import { useAuth } from "../context"
-import '../styles/Signup.css'
+import Logo from "../components/Logo"
+import Title from "../components/Title"
+import {
+  Button,
+  CenterParagraph,
+  HeaderTitle,
+  InputField,
+  SignUpContainer,
+  SignUpFormContainer
+} from "../styles/StyledComponents"
 
 const Signup = () => {
 
@@ -41,57 +49,60 @@ const Signup = () => {
   }
 
   return (
-    <div className="signup">
-      <Header />
-      <div className="form">
-        <form onSubmit={handleFormSubmit}>
+    <>
+      <Logo />
+      <SignUpContainer>
+        <Title />
+        <SignUpFormContainer>
+          <form onSubmit={handleFormSubmit}>
+            <div>
+              <HeaderTitle>Cadastro de novo usuário</HeaderTitle>
+            </div>
+            <div>
+              <label>
+                E-mail
+                <InputField
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="exemplo@email.com"
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Senha
+                <InputField
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="senha"
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Confirmação de senha
+                <InputField
+                  type="password"
+                  value={passwordConfirmation}
+                  onChange={(e) => setPasswordConfirmation(e.target.value)}
+                  placeholder="senha"
+                />
+              </label>
+            </div>
+            <div>
+              <Button disabled={isLoading} type="submit">Cadastrar</Button>
+            </div>
+          </form>
           <div>
-            <h2>Cadastro de novo usuário</h2>
+            <CenterParagraph>
+              <Link to='/login'>Já possui uma conta? Faça login</Link>
+            </CenterParagraph>
           </div>
-          <div>
-            <label>
-              E-mail
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="exemplo@email.com"
-              />
-            </label>
-          </div>
-          <div>
-            <label>
-              Senha
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="senha"
-              />
-            </label>
-          </div>
-          <div>
-            <label>
-              Confirmação de senha
-              <input
-                type="password"
-                value={passwordConfirmation}
-                onChange={(e) => setPasswordConfirmation(e.target.value)}
-                placeholder="senha"
-              />
-            </label>
-          </div>
-          <div>
-            <button disabled={isLoading} type="submit">Cadastrar</button>
-          </div>
-        </form>
-        <div>
-          <p>
-            <Link to='/login'>Já possui uma conta? Faça login</Link>
-          </p>
-        </div>
-      </div>
-    </div>
+        </SignUpFormContainer>
+      </SignUpContainer>
+    </>
   )
 }
 

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Header from '../components/Header'
 import { useAuth } from '../context'
-import '../styles/Signup.css'
-import '../styles/Login.css'
+import Logo from '../components/Logo'
+import Title from '../components/Title'
+import { Button, FormContainer, HeaderTitle, InputField, LoginContainer, LoginFormContainer } from '../styles/StyledComponents'
 
 const Login = () => {
 
@@ -21,6 +21,7 @@ const Login = () => {
     if (password.length < 6) {
       alert("A senha deve ter no mínimo 6 caracteres")
       setIsLoading(false)
+      return
     }
 
     try {
@@ -34,47 +35,52 @@ const Login = () => {
   }
 
   return (
-    <div className='login'>
-      <Header />
-      <div className="form">
-        <form onSubmit={handleFormSubmit}>
-          <div>
-            <h2>Login</h2>
-          </div>
-          <div>
-            <label>
-              E-mail
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="exemplo@email.com"
-              />
-            </label>
-          </div>
-          <div>
-            <label>
-              Senha
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="senha"
-              />
-            </label>
-          </div>
-          <div>
-            <button disabled={isLoading} type="submit">Entrar</button>
-          </div>
-        </form>
-        <div>
-          <p><Link to='/signup'>Não possui uma conta? Cadastre-se</Link></p>
-        </div>
-        <div>
-          <p><Link to='/forgot-password'>Esqueceu a senha?</Link></p>
-        </div>
-      </div>
-    </div>
+    <>
+      <Logo />
+      <LoginContainer>
+        <FormContainer>
+          <Title />
+          <LoginFormContainer>
+            <form onSubmit={handleFormSubmit}>
+              <div>
+                <HeaderTitle>Entre</HeaderTitle>
+              </div>
+              <div>
+                <label>
+                  E-mail
+                  <InputField
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="exemplo@email.com"
+                  />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Senha
+                  <InputField
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="senha"
+                  />
+                </label>
+              </div>
+              <div>
+                <Button disabled={isLoading} type="submit">Entrar</Button>
+              </div>
+            </form>
+            <div>
+              <p><Link to='/signup'>Não possui uma conta? Cadastre-se</Link></p>
+            </div>
+            <div>
+              <p><Link to='/forgot-password'>Esqueceu a senha?</Link></p>
+            </div>
+          </LoginFormContainer>
+        </FormContainer>
+      </LoginContainer>
+    </>
   )
 }
 

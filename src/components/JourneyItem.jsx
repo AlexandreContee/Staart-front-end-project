@@ -1,19 +1,23 @@
 import { Link } from 'react-router-dom'
-import '../styles/JourneyItem.css'
+import { ImageBanner, ImageThumb, JourneyContainer, JourneyDescription, JourneyDescriptionContainer, JourneyInfo, JourneyTag, JourneyTitle, LinkContainer } from '../styles/StyledComponents'
 
 const JourneyItem = ({ thumb, description, group, title, banner, pathID }) => {
   return (
-    <div className="journey">
-      <Link to={`/journey/${pathID}`}>
-        <div>
-          <img src={thumb} alt="thumb" />
-          <h2>Jornada de {title}</h2>
-        </div>
-        {!!banner ? <img src={banner} alt="" className='banner' /> : null}
-        <p>{description}</p>
-        <p className='tag'>{group}</p>
+    <JourneyContainer>
+      <Link to={`/journey/${pathID}`} className='journeyLink'>
+        <LinkContainer>
+          <JourneyInfo>
+            <ImageThumb src={thumb} alt="thumb" />
+            <JourneyTitle>{title}</JourneyTitle>
+          </JourneyInfo>
+          {!!banner ? <ImageBanner src={banner} alt="" className='banner' /> : null}
+          <JourneyDescriptionContainer>
+            <JourneyDescription>{description}</JourneyDescription>
+            <JourneyTag>{group}</JourneyTag>
+          </JourneyDescriptionContainer>
+        </LinkContainer>
       </Link>
-    </div>
+    </JourneyContainer>
   )
 }
 

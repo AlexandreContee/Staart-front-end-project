@@ -3,7 +3,6 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  updateEmail,
   sendPasswordResetEmail,
   onAuthStateChanged,
 } from "firebase/auth"
@@ -30,10 +29,6 @@ export const AuthProvider = ({ children }) => {
     return signOut(auth)
   }
 
-  const updateEmailAddress = (newEmail) => {
-    return updateEmail(currentUser, newEmail)
-  }
-
   const resetPassword = (email) => {
     return sendPasswordResetEmail(auth, email)
   }
@@ -51,7 +46,6 @@ export const AuthProvider = ({ children }) => {
       signIn,
       logOut,
       currentUser,
-      updateEmailAddress,
       resetPassword
     }}
     >

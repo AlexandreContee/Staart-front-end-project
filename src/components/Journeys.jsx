@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
+import { CenterTitle, JourneysSelection, Loader } from "../styles/StyledComponents"
 import JourneyItem from "./JourneyItem"
-import '../styles/Journeys.css'
 
 const Journeys = () => {
 
@@ -16,10 +16,10 @@ const Journeys = () => {
   }, [])
 
   return (
-    <div className="journeys">
-      <h2>Jornadas de aprendizado</h2>
+    <JourneysSelection>
+      <CenterTitle id="mainH2">Jornadas de aprendizado</CenterTitle>
       {isLoading ?
-        (<div className="loader"></div>)
+        <Loader />
         : (journeys.map(journey => {
           return (
             <JourneyItem
@@ -34,7 +34,7 @@ const Journeys = () => {
           )
         }))
       }
-    </div>
+    </JourneysSelection>
   )
 }
 

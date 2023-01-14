@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react"
-import { CenterTitle, JourneysSelection, Loader } from "../styles/StyledComponents"
+import { 
+  CenterTitle, 
+  JourneysSelection, 
+  Loader 
+} from "../styles/StyledComponents"
 import JourneyItem from "./JourneyItem"
 
 const Journeys = () => {
@@ -12,7 +16,6 @@ const Journeys = () => {
       .then(data => data.json())
       .then(json => setJourneys(json))
       .finally(() => setIsLoading(false))
-
   }, [])
 
   return (

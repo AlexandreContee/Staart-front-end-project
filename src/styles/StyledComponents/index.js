@@ -8,12 +8,16 @@ export const RedSpan = styled.span`
   color: #BC415A;
 
   ::selection {
-    background-color: #3B9AD9;
+    background-color: transparent;
   }
 `
 
 export const PurpleSpan = styled.span`
   color: #8264bb;
+
+  ::selection {
+    background-color: transparent;
+  }
 `
 
 export const LogoSpaceHolder = styled.div`
@@ -28,6 +32,7 @@ export const LogoContainer = styled.div`
   width: 100%;
   height: 100px;
   background-color: #000000b3;
+  backdrop-filter: blur(4px);
   display: flex;
   z-index: 10;
 `
@@ -186,8 +191,8 @@ export const JourneysSelection = styled.div`
 `
 
 export const Loader = styled.div`
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -196,7 +201,7 @@ export const Loader = styled.div`
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
+  }
 `
 
 export const JourneyContainer = styled.div`
@@ -217,7 +222,9 @@ export const JourneyContainer = styled.div`
 
 export const ImageThumb = styled.img`
   width: 50px;
+  height: 50px;
   transition: scale 0.3s ease-in-out;
+
   :hover {
     scale: 1.5;
   }
@@ -256,6 +263,7 @@ export const JourneyInfo = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
 `
 
 export const JourneyDescriptionContainer = styled.div`
@@ -267,3 +275,128 @@ export const JourneyDescriptionContainer = styled.div`
   flex-direction: column;
 `
 
+export const SelectedJourneyContainer = styled.div`
+  width: 100%;
+  margin: 30px auto;
+`
+
+export const SelectedJourney = styled.div`
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const FlexDisplay = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const SelectedJourneyInfo = styled.div`
+  background-color: #8264bb;
+  padding: 2rem;
+  border-radius: 10px;
+`
+
+export const Head1 = styled.h1`
+  margin-left: 20px;
+`
+
+export const Head2 = styled.h2`
+  margin: 10px 20px;
+`
+
+export const NotFoundRouteContainer = styled.div`
+  margin: auto;
+`
+
+export const CoursesContainer = styled.div`
+  margin: 50px auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #8264bb;
+  border-radius: 20px;
+  padding: 10px;
+`
+
+export const CourseContainer = styled.div`
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  margin-top: 30px;
+  transition: scale 0.3s ease-in-out;
+
+  :hover {
+    cursor: pointer;
+  }
+`
+
+export const CourseImageThumb = styled.img`
+  width: 100%;
+  display: flex;
+`
+
+export const ImageAndDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`
+
+export const CourseDescription = styled.p`
+  margin: 20px;
+  width: 100%;
+  display: flex;
+`
+
+export const TagsContainer = styled.div`
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px;
+  color: #000;
+  margin: 10px auto 0 auto;
+  background-color: #ddd;
+  text-align: center;
+`
+
+export const LevelParagraph = styled.p`
+  color: #ddd;
+`
+
+export const ContainerLink = styled.div`
+  background-color: #223;
+  padding: 10px 20px;
+  border-radius: 10px;
+`
+
+export const Instructor = styled.p`
+  color: #BC415A;
+`
+
+export const Head2Container = styled.h2`
+  text-align: center;
+  margin: 10px;
+`
+
+export const CourseInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #8264bb;
+  width: 90%;
+  margin: 20px auto;
+  color: #000;
+`
+
+export const CourseLessonContainer = styled.div`
+  
+`

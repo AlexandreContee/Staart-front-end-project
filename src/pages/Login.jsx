@@ -3,7 +3,14 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context'
 import Logo from '../components/Logo'
 import Title from '../components/Title'
-import { Button, FormContainer, HeaderTitle, InputField, LoginContainer, LoginFormContainer } from '../styles/StyledComponents'
+import {
+  Button,
+  FormContainer,
+  HeaderTitle,
+  InputField,
+  LoginContainer,
+  LoginFormContainer
+} from '../styles/StyledComponents'
 
 const Login = () => {
 
@@ -32,6 +39,8 @@ const Login = () => {
     }
 
     setIsLoading(false)
+    setPassword('')
+    setEmail('')
   }
 
   return (

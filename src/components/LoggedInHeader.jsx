@@ -1,6 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context'
-import { NavContainer, UserContainer, UserLogout } from '../styles/StyledComponents'
+import { 
+  NavContainer, 
+  UserContainer, 
+  UserLogout 
+} from '../styles/StyledComponents'
 import Logo from './Logo'
 
 const LoggedInHeader = () => {

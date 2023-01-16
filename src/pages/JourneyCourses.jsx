@@ -2,8 +2,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import {
+  CourseImage,
   CourseInfoContainer,
-  CourseLessonContainer,
   Head2Container
 } from "../styles/StyledComponents"
 import Logo from "../components/Logo"
@@ -30,14 +30,14 @@ const JourneyCourses = () => {
       {!!courseData ? (
         <CourseInfoContainer>
           <Head2Container>{courseData.title}</Head2Container>
-          <img src={courseData.medias?.thumb} alt="thumb" />
-          <h1>Aulas Disponíveis</h1>
-          {!!courseData.modules ? courseData.modules.map(module => (
-            <CourseLessonContainer key={module.title}>
-              <h2>{module.title}</h2>
-            </CourseLessonContainer>
-          )
-          ) : null}
+          <CourseImage src={courseData.medias?.thumb} alt="thumb" />
+          <h2>Aulas Disponíveis</h2>
+          <ol>
+            {!!courseData.modules ? courseData.modules.map(module => (
+              <li key={module.title}>{module.title}</li>
+            )
+            ) : null}
+          </ol>
         </CourseInfoContainer>
       ) : null}
     </>

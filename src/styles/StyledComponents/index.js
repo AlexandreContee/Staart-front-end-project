@@ -183,7 +183,7 @@ export const CenterTitle = styled.h2`
 // Journeys.jsx
 
 export const JourneysSelection = styled.div`
-  width: 100%;
+  margin: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,11 +205,9 @@ export const Loader = styled.div`
 `
 
 export const JourneyContainer = styled.div`
-  width: 80%;
+  margin: 30px;
   background-color: #8264bb;
   padding: 2rem;
-  margin-top: 30px;
-  margin-bottom: 20px;
   border-radius: 15px;
   transition: scale 0.3s ease-in-out;
   color: #000;
@@ -294,6 +292,7 @@ export const FlexDisplay = styled.div`
 `
 
 export const SelectedJourneyInfo = styled.div`
+  margin: 30px;
   background-color: #8264bb;
   padding: 2rem;
   border-radius: 10px;
@@ -312,8 +311,7 @@ export const NotFoundRouteContainer = styled.div`
 `
 
 export const CoursesContainer = styled.div`
-  margin: 50px auto;
-  width: 100%;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -395,8 +393,9 @@ export const CourseInfoContainer = styled.div`
   width: 90%;
   margin: 20px auto;
   color: #000;
+  border-radius: 10px;
 `
 
-export const CourseLessonContainer = styled.div`
-  
+export const CourseImage = styled.img`
+  width: 90%;
 `

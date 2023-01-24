@@ -2,8 +2,11 @@
 
 ## Projeto Final da Jornada de Front-End Desenvolvido no Curso da Staart
 
+## Acesso a aplicação no link:
+[ProSchool](https://staart-front-end-project.vercel.app/)
+
 ## Objetivos do Projeto
-Projeto final, desenvolvido com o objetivo de praticar o desenvolvimento com React.
+Projeto final, desenvolvido com o objetivo de praticar o desenvolvimento Front-End com React.
 
 ## Sobre o Projeto
 É uma plataforma com funcionamento semelhante a plataforma da Staart. Lida com o fluxo de dados de uma API externa, listando as jornadas de aprendizado, cursos e aulas.
